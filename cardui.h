@@ -30,16 +30,6 @@ public:
     void setEmailFields(void);      // Set field properties.
     void arrangeEmailFields(void);  // Arrange fields into 'email' layout.
 
-    void qaFields(void);            // Create all card question and answer fields, formated and arranged.
-    void createQAFields(void);      // Create field instance.
-    void setQAFields(void);         // Set field properties.
-    void arrangeQAFields(void);     // Arrange fields into 'qa' layout.
-
-    void imageFields(void);         // Create all card image fields, formated and arranged.
-    void createImageFields(void);   // Create field instance.
-    void setImageFields(void);      // Set field properties.
-    void arrangeImageFields(void);  // Arrange fields into 'image' layout.
-
     void submitFields(void);        // Create all card submit fields, formated and arranged.
     void createSubmitFields(void);  // Create field instance.
     void setSubmitFields(void);     // Set field properties.
@@ -54,32 +44,14 @@ public:
                 *edText;
     QLabel      *eAtLabel,
                 *cardID;
-    QCheckBox   *q0,
-                *q1,
-                *q2,
-                *q3,
-                *q4,
-                *q5,
-                *isMember;
-    QPushButton *submitNew,
-                *submitEdit;
+    QCheckBox   *isMember;
+    QPushButton *submitNew;
     QHBoxLayout *card,
                 *name,
                 *email,
-                *qa,
-                *image,
                 *submit;
-    QVBoxLayout *qaColumOne,
-                *imageColum,
-                *submitStatus,
+    QVBoxLayout *submitStatus,
                 *infoRequest;
-    QGraphicsView *cardImage;
-
-signals:
-
-    
-public slots:
-    
 };
 
 #endif // CARDUI_H

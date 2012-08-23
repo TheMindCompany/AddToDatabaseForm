@@ -16,41 +16,17 @@ public:
     void createConnection(void);    // Start the `db` connection.
 
     void setTableQuery(void);       // Create `dbQuery`(s).
-    void refresh();                 // Refresh QSqlQueryModel
-
-    // Allow write mode to QSqlQueryModel
-    Qt::ItemFlags flags(const QModelIndex &index) const;
-    bool setData(const QModelIndex &index, const QVariant &value, int role);
+    virtual void setNewRecord(QString f, QString mi, QString l, QString ea, QString ed, bool member);
 
     QSqlDatabase    db;
     QString         dbHost,
                     dbName,
                     dbUser,
-                    dbPass,
-                    dbString;
+                    dbPass;
     qint32          dbPort;
 
-private:
-    // Update members to QSqlQueryModel.
-    bool setFirstName(int personId, const QString &firstName);
-    bool setMiddleInitial(int personId, const QString &middleInitial);
-    bool setLastName(int personId, const QString &lastName);
-    bool setEmailAddress(int personId, const QString &emailAddress);
-    bool setEmailDomain(int personId, const QString &emailDomain);
-    bool setIsMember(int personId, const QString &isMember);
-    /* Focusing on SurveyPerson table first.
-    bool setQ0(int personId, const QString &q0);
-    bool setQ1(int personId, const QString &q1);
-    bool setQ2(int personId, const QString &q2);
-    bool setQ3(int personId, const QString &q3);
-    bool setQ4(int personId, const QString &q4);
-    bool setQ5(int personId, const QString &q5);
-    */
 
-signals:
-    
-public slots:
-    void submitNew(void);  // A idea(tmp maybe)
+
 };
 
 #endif // TRACKERSQL_H

@@ -11,7 +11,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent){
 }
 
 MainWindow::~MainWindow(){
-    
+
 }
 
 void MainWindow::setWindowProperties(void){
@@ -33,6 +33,7 @@ void MainWindow::windowFields(void){
 void MainWindow::createWindowFields(void){
     sqlModel = new TrackerSql;
     card = new Card(sqlModel);
+    delete sqlModel;
 }
 
 void MainWindow::setWindowFields(void){

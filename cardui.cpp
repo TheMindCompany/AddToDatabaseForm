@@ -17,8 +17,6 @@ void CardUI::cardFields(void){
 void CardUI::createCardFields(void){
     nameFields();
     emailFields();
-    qaFields();
-    imageFields();
     submitFields();
 }
 
@@ -26,11 +24,8 @@ void CardUI::arrangeCardFields(void){
     infoRequest = new QVBoxLayout;
     card = new QHBoxLayout;
 
-    card->addLayout(image);
-
     infoRequest->addLayout(name);
     infoRequest->addLayout(email);
-    infoRequest->addLayout(qa);
     infoRequest->addLayout(submit);
 
     card->addLayout(infoRequest);
@@ -93,61 +88,6 @@ void CardUI::arrangeEmailFields(void){
     email->addWidget(edText);
 }
 
-void CardUI::qaFields(void){
-    createQAFields();
-    setQAFields();
-    arrangeQAFields();
-}
-
-void CardUI::createQAFields(void){
-    q0 = new QCheckBox;
-    q1 = new QCheckBox;
-}
-
-void CardUI::setQAFields(void){
-    q0->setText("Send Membership Brochure");
-    q1->setText("Send Event Updates");
-}
-
-void CardUI::arrangeQAFields(void){
-    qaColumOne = new QVBoxLayout;
-    qa = new QHBoxLayout;
-
-    q0->setChecked(true);
-
-    qaColumOne->addWidget(q0);
-    qaColumOne->addWidget(q1);
-
-    qa->addLayout(qaColumOne);
-}
-
-void CardUI::imageFields(void){
-    createImageFields();
-    setImageFields();
-    arrangeImageFields();
-}
-
-void CardUI::createImageFields(void){
-    cardImage = new QGraphicsView;
-}
-
-void CardUI::setImageFields(void){
-    cardImage->setFixedWidth(150);
-    cardImage->setFixedHeight(200);
-
-    cardImage->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    cardImage->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-}
-
-void CardUI::arrangeImageFields(void){
-    imageColum = new QVBoxLayout;
-    image = new QHBoxLayout;
-
-    imageColum->addWidget(cardImage);
-
-    image->addLayout(imageColum);
-}
-
 void CardUI::submitFields(void){
     createSubmitFields();
     setSubmitFields();
@@ -156,7 +96,6 @@ void CardUI::submitFields(void){
 
 void CardUI::createSubmitFields(void){
     submitNew = new QPushButton("Add");
-    submitEdit = new QPushButton("Edit");
     isMember = new QCheckBox;
 }
 
